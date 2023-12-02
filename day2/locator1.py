@@ -14,6 +14,7 @@ options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get("https://www.facebook.com/")
+# driver.get("https://www.facebook.com/")
 driver.maximize_window()
 
 ##tag and id #
