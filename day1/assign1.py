@@ -17,13 +17,16 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-service =Service("C:\Drivers\chromedriver_win32\chromedriver.exe")
-options = Options()
-options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-options.add_argument("--remote-debugging-port=9222")
-options.add_argument("--start-maximized")
+# service =Service("C:\Drivers\chromedriver_win32\chromedriver.exe")
+# options = Options()
+# options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+# options.add_argument("--remote-debugging-port=9222")
+# options.add_argument("--start-maximized")
 
-driver = webdriver.Chrome(service=service, options=options)
+# driver = webdriver.Chrome()
+# driver = webdriver.Firefox()
+driver = webdriver.Edge()
+
 
 driver.get("https://admin-demo.nopcommerce.com/login")
 # driver.implicitly_wait(3)
@@ -46,4 +49,4 @@ if actual_title == expected_title:
 else:
     print("Login test failed")
 
-# driver.close()
+driver.close()

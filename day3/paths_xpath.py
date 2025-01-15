@@ -1,17 +1,17 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-service = Service(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")
+# service = Service(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")
 
-options = Options()
-options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-options.add_argument("--remote-debugging-port=9222")
-# options.add_argument("--start-maximized")
-options.add_experimental_option("detach", True)
+# options = Options()
+# options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+# options.add_argument("--remote-debugging-port=9222")
+# # options.add_argument("--start-maximized")
+# options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome()
 
 driver.get("https://opensource-demo.orangehrmlive.com")
 
@@ -50,7 +50,9 @@ driver.implicitly_wait(10)
 driver.find_element(by=By.XPATH,value="//input[contains(@name,'user')]").send_keys("Admin")
 driver.find_element(by=By.XPATH,value="//input[starts-with(@name,'pass')]").send_keys("admin123")
 
-driver.find_element(by=By.XPATH,value="//button[starts-with(@type,'su')]").click()
+# driver.find_element(by=By.XPATH,value="//button[starts-with(@type,'su')]").click()
 
 ## text()
 driver.find_element(by=By.XPATH,value="//button[text()=' Login ']").click()
+
+driver.close()
