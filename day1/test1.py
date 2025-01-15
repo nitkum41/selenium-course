@@ -15,15 +15,30 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.expected_conditions import title_is
 from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-service = Service("C:\Drivers\chromedriver_win32\chromedriver.exe")
+# capabilities = DesiredCapabilities.CHROME.copy()
 
-options=Options()
-options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-options.add_argument("--remote-debugging-port=9222")
-options.add_argument("--start-maximized")
+# capabilities['acceptInsecureCerts'] = True
 
-driver = webdriver.Chrome(service=service,options=options)
+#in pthon 3.12 onwards it treats \G as special character so add r"" to the beginning of string
+
+# service = Service(r"C:\Drivers\chromedriver-win64\chromedriver.exe")
+
+# options=Options()
+# options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+# options.add_argument('--ignore-certificate-errors')
+# options.add_argument('--ignore-ssl-errors')
+# options.add_argument('--allow-insecure-localhost')
+# options.add_argument('--ignore-urlfetcher-cert-requests')
+
+# options.add_argument("--remote-debugging-port=9222")
+# options.add_argument("--start-maximized")
+
+driver = webdriver.Chrome()
+# driver = webdriver.Firefox()
+# driver = webdriver.Edge()
+
 
 driver.get("https://opensource-demo.orangehrmlive.com/")
 
