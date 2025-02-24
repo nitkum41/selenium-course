@@ -8,9 +8,11 @@ driver=webdriver.Chrome()
 driver.get("https://www.federalbank.co.in/fixed-deposit-calculator")
 
 driver.implicitly_wait(5)
-driver.maximize_window() 
+driver.maximize_window()
 
-file = os.path.join(os.getcwd(),"day14\\testdata.xlsx")
+print(os.getcwd())
+
+file = os.path.join(os.getcwd(),"C:\\Users\\nitku\\PycharmProjects\\SeleniumProject\\day14\\testdata.xlsx")
 
 rows = excelutils.getRowCount(file,"Data")
 
